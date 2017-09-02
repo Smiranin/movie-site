@@ -1,0 +1,52 @@
+@import "../../../../styles/variables";
+
+@keyframes show-popup {
+  from {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.popup{
+
+  $popup-footer-gradient: linear-gradient(rgb(239, 239, 239), rgb(229, 229, 229));
+  $bg-overlay: rgba(0,0,0,.7);
+
+  &__container {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2112;
+    border-radius: 2px;
+    animation-name: show-popup;
+    animation-duration: .3s;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: -36px;
+    right: -36px;
+    color: #ffffff;
+    cursor: pointer;
+
+    &:hover{
+      color: #ff3e3e;
+    }
+  }
+
+  &__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2111;
+    background: $bg-overlay;
+  }
+}

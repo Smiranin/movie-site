@@ -1,0 +1,7 @@
+<div class="popup__container">
+  <i class="popup__close-btn mdi mdi-36px mdi-close-box"
+     (click)="closePopup()"></i>
+  <ng-content select="[popup-body]"></ng-content>
+</div>
+
+<div class="popup__overlay overlay"></div>

@@ -1,0 +1,16 @@
+@import "variables";
+
+.page-container {
+  padding: 12px 0;
+}
+
+.page-header {
+  color: $title-color;
+  font-size: 2.5em;
+  border-bottom: $border-default;
+}
+
+.movies-list {
+  display: flex;
+  flex-wrap: wrap;
+}

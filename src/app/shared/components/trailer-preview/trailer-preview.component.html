@@ -1,0 +1,11 @@
+<app-popup class="popup"
+           *ngIf="isOpenPopup"
+           (outsideClick)="closePopup()">
+  <ng-container popup-body>
+    <youtube-player
+      [videoId]="trailerId"
+      [width]="SIZE.width"
+      [height]="SIZE.height">
+    </youtube-player>
+  </ng-container>
+</app-popup>

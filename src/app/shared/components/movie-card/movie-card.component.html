@@ -1,0 +1,52 @@
+<div class="movie-card__content">
+
+  <div class="movie-card__img-block">
+    <img class="movie-card__img" [src]="movie.urlPoster" alt="">
+    <div class="movie-card__button-overlay"
+         [routerLink]="['', {outlets: {'preview-trailer': [movie.trailerId]}}]">
+      <i class="mdi mdi-48px mdi-play-circle-outline"></i>
+    </div>
+  </div>
+
+  <div class="movie-card__info-block">
+
+    <label class="movie-card__label-favorite">
+      Favorited <input #favoriteCheckbox
+                       type="checkbox"
+                       name="favorite"
+                       [checked]="isFavorited"
+                       (change)="toggleFavoriteState(favoriteCheckbox.checked, movie.idIMDB)"
+                       class="movie-card__checkbox-favorite">
+    </label>
+    <h3 class="movie-card__title">{{movie.title}}</h3>
+
+    <ul class="movie-card__information">
+      <li class="movie-card__information-item information-item">
+        <span class="information-item__name">Year:</span>
+        <span class="information-item__value">{{movie.year}}</span>
+      </li>
+      <li class="movie-card__information-item">
+        <span class="information-item__name">Rating:</span>
+        <span class="information-item__value">{{movie.rating}}</span>
+      </li>
+      <li class="movie-card__information-item">
+        <span class="information-item__name">Genre:</span>
+        <span class="information-item__value">{{movie.genres.join(',')}}</span>
+      </li>
+      <li class="movie-card__information-item">
+        <span class="information-item__name">Countries:</span>
+        <span class="information-item__value">{{movie.countries.join(',')}}</span>
+      </li>
+      <li class="movie-card__information-item">
+        <span class="information-item__name">Director:</span>
+        <a target="_blank"
+           [href]="'http://imdb.com/name/' + movie.directors[0].id"
+           class="information-item__value">
+          {{movie.directors[0].name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
