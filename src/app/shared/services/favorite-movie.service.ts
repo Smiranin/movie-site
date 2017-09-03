@@ -46,7 +46,7 @@ export class MovieFavoriteService {
   }
 
   public get(): Observable<any> {
-    return Observable.of({...this._favorites});
+    return Observable.of({ ...this._favorites });
   }
 
   private saveState(): void {

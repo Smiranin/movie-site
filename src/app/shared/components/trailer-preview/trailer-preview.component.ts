@@ -3,8 +3,7 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 
 @Component({
   selector: 'app-trailer-preview',
-  templateUrl: './trailer-preview.component.html',
-  styleUrls: ['./trailer-preview.component.scss']
+  templateUrl: './trailer-preview.component.html'
 })
 export class TrailerPreviewComponent implements OnInit {
 
@@ -18,9 +17,10 @@ export class TrailerPreviewComponent implements OnInit {
   public redirectPath: string;
 
 
-  public constructor(private _activatedRoute: ActivatedRoute,
-                     private _router: Router,) {
-  }
+  public constructor(
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router,
+    ) {}
 
   public ngOnInit() {
     this._activatedRoute.params

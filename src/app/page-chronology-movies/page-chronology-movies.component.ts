@@ -23,9 +23,10 @@ export class PageChronologyMoviesComponent implements OnInit {
   public data: any[] = [];
 
 
-  public constructor(private _movieService: MovieService,
-                     private _moviesChronologyService: MoviesChronologyService) {
-  }
+  public constructor(
+    private _movieService: MovieService,
+    private _moviesChronologyService: MoviesChronologyService
+  ) {}
 
   public ngOnInit(): void {
     this._movieService.getTop()
@@ -36,7 +37,10 @@ export class PageChronologyMoviesComponent implements OnInit {
   private _generateDataForChart(data: { [key: string]: IMovie[] }): void {
     Object.keys(data).forEach((key: string) => {
       this.data.push(
-        { name: key, value: data[key].length }
+        {
+          name: key,
+          value: data[key].length
+        }
       );
     });
   }

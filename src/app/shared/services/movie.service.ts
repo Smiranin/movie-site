@@ -15,19 +15,19 @@ export class MovieService {
 
   private _favorites$$: BehaviorSubject<IMovie[]> = new BehaviorSubject(null);
 
-  public get favorites$ (): Observable<IMovie[]> {
+  public get favorites$(): Observable<IMovie[]> {
     return this._favorites$$.asObservable();
   }
 
   public constructor(
-    private _movieFavoriteService: MovieFavoriteService
+    private _movieFavoriteService: MovieFavoriteService,
   ) {
     this._movieFavoriteService.removedStream$
       .subscribe((id: string) => this._updateFavorites(id));
   }
 
   public getTop(): Observable<IMovie[]> {
-   return Observable.of(movies);
+    return Observable.of(movies);
   }
 
   public initFavorites(): void {
@@ -36,8 +36,8 @@ export class MovieService {
       this.getTop()
     )
       .map(([favoriteIds, movies]: [any, IMovie[]]) => {
-      return movies.filter((movie: IMovie) => favoriteIds[movie.idIMDB])
-    })
+        return movies.filter((movie: IMovie) => favoriteIds[movie.idIMDB])
+      })
       .subscribe((movies: IMovie[]) => this._favorites$$.next(movies));
   }
 

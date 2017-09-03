@@ -6,9 +6,7 @@ import 'rxjs/add/observable/of';
 @Injectable()
 export class MoviesChronologyService {
 
-  constructor() { }
-
-  public generateChronology(movies: IMovie[]): Observable<{[key: string]: IMovie[]}> {
+  public generateChronology(movies: IMovie[]): Observable<{ [key: string]: IMovie[] }> {
     const result = {};
     movies.forEach((movie: IMovie) => {
       const decadeKey: string = movie.year.replace(/\d$/, '0');

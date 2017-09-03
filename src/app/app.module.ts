@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {  NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -33,4 +33,5 @@ import { ROUTES } from './routes.config';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

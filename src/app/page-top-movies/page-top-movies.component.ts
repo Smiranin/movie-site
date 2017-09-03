@@ -12,8 +12,9 @@ export class PageTopMoviesComponent implements OnInit {
   public movies: Observable<IMovie[]>;
 
   public constructor(
-    private movieService: MovieService
-  ) { }
+    private movieService: MovieService,
+  ) {
+  }
 
   public ngOnInit() {
     this.movies = this.movieService.getTop();

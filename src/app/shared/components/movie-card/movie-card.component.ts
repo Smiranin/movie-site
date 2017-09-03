@@ -1,8 +1,8 @@
 import {
   Component,
-  EventEmitter,
   Input,
-  OnInit } from '@angular/core';
+  OnInit
+} from '@angular/core';
 
 import { MovieFavoriteService } from "../../services/favorite-movie.service";
 
@@ -19,8 +19,9 @@ export class MovieCardComponent implements OnInit {
   public isFavorited: boolean = false;
 
   public constructor(
-    private _movieFavoriteService: MovieFavoriteService
-  ) { }
+    private _movieFavoriteService: MovieFavoriteService,
+  ) {
+  }
 
   public ngOnInit() {
     this.isFavorited = this._movieFavoriteService.getStatus(this.movie.idIMDB)

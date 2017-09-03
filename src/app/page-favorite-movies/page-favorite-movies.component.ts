@@ -13,7 +13,7 @@ export class PageFavoriteMoviesComponent implements OnInit {
 
   public constructor(
     private movieService: MovieService,
-  ) {}
+    ) {}
 
   public ngOnInit() {
     this.movieService.initFavorites();
